@@ -42,6 +42,6 @@ export const useAppStore = create<AppState & AppActions>()(
       setSidebarOpen: (open) => set({ sidebarOpen: open }, false, 'setSidebarOpen'),
       setGlobalLoading: (loading) => set({ globalLoading: loading }, false, 'setGlobalLoading'),
     }),
-    { name: 'AppStore' },
-  ),
+    { name: 'AppStore' }
+  )
 );

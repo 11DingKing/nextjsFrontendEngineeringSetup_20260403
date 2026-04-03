@@ -13,8 +13,7 @@ const apiClient = axios.create({
 apiClient.interceptors.request.use(
   (config: InternalAxiosRequestConfig) => {
     // 从存储中获取 token
-    const token =
-      typeof window !== 'undefined' ? localStorage.getItem('access_token') : null;
+    const token = typeof window !== 'undefined' ? localStorage.getItem('access_token') : null;
 
     if (token && config.headers) {
       config.headers.Authorization = `Bearer ${token}`;
@@ -24,7 +23,7 @@ apiClient.interceptors.request.use(
   },
   (error: AxiosError) => {
     return Promise.reject(error);
-  },
+  }
 );
 
 // 响应拦截器
@@ -61,7 +60,7 @@ apiClient.interceptors.response.use(
     }
 
     return Promise.reject(error);
-  },
+  }
 );
 
 export default apiClient;

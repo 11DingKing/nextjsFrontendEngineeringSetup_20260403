@@ -24,7 +24,7 @@ export const authService = {
   refreshToken: (refreshToken: string) => {
     return apiClient.post<{ refreshToken: string }, ApiResponse<{ accessToken: string }>>(
       '/auth/refresh',
-      { refreshToken },
+      { refreshToken }
     );
   },
 

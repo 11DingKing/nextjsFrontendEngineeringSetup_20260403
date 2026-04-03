@@ -82,12 +82,7 @@ export function Header() {
       </div>
 
       {/* Mobile Menu */}
-      <div
-        className={cn(
-          'md:hidden',
-          mobileMenuOpen ? 'block' : 'hidden',
-        )}
-      >
+      <div className={cn('md:hidden', mobileMenuOpen ? 'block' : 'hidden')}>
         <div className="space-y-1 px-4 pb-3 pt-2">
           {navLinks.map((link) => (
             <Link
@@ -106,7 +101,14 @@ export function Header() {
                   <User className="h-4 w-4" />
                   <span>{user?.username}</span>
                 </div>
-                <Button variant="outline" className="w-full" onClick={() => { handleLogout(); setMobileMenuOpen(false); }}>
+                <Button
+                  variant="outline"
+                  className="w-full"
+                  onClick={() => {
+                    handleLogout();
+                    setMobileMenuOpen(false);
+                  }}
+                >
                   <LogOut className="mr-1 h-4 w-4" />
                   退出登录
                 </Button>

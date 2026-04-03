@@ -8,12 +8,19 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { loginSchema, type LoginFormValues } from '@/schemas';
 import { useAuthStore } from '@/stores';
 import { UserRole } from '@/types';
-import { Button, Input, Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui';
+import {
+  Button,
+  Input,
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from '@/components/ui';
 
 // 模拟测试账号
-const TEST_ACCOUNTS = [
-  { email: 'test@example.com', password: '123456', name: '测试用户' },
-];
+const TEST_ACCOUNTS = [{ email: 'test@example.com', password: '123456', name: '测试用户' }];
 
 export default function LoginPage() {
   const router = useRouter();
@@ -34,15 +41,15 @@ export default function LoginPage() {
 
   const onSubmit = async (data: LoginFormValues) => {
     setError(null);
-    
+
     // 模拟请求延迟
     await new Promise((resolve) => setTimeout(resolve, 500));
-    
+
     // 模拟登录验证（实际项目中应调用 API）
     const account = TEST_ACCOUNTS.find(
       (acc) => acc.email === data.email && acc.password === data.password
     );
-    
+
     if (account) {
       // 登录成功
       const mockUser = {
@@ -54,7 +61,7 @@ export default function LoginPage() {
         updatedAt: new Date().toISOString(),
       };
       const mockToken = 'mock-jwt-token-' + Date.now();
-      
+
       login(mockUser, mockToken);
       router.push('/dashboard');
     } else {
@@ -77,9 +84,12 @@ export default function LoginPage() {
                 {error}
               </div>
             )}
-            
+
             <div className="space-y-2">
-              <label htmlFor="email" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+              <label
+                htmlFor="email"
+                className="text-sm font-medium text-zinc-700 dark:text-zinc-300"
+              >
                 邮箱地址
               </label>
               <Input
@@ -92,7 +102,10 @@ export default function LoginPage() {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="password" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+              <label
+                htmlFor="password"
+                className="text-sm font-medium text-zinc-700 dark:text-zinc-300"
+              >
                 密码
               </label>
               <Input
@@ -111,7 +124,10 @@ export default function LoginPage() {
             </Button>
             <p className="text-center text-sm text-zinc-500">
               还没有账号？{' '}
-              <Link href="/register" className="font-medium text-zinc-900 hover:underline dark:text-zinc-50">
+              <Link
+                href="/register"
+                className="font-medium text-zinc-900 hover:underline dark:text-zinc-50"
+              >
                 立即注册
               </Link>
             </p>

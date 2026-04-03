@@ -21,11 +21,7 @@ const nextConfig: NextConfig = {
   // 实验性功能
   experimental: {
     // 优化包导入
-    optimizePackageImports: [
-      'lucide-react',
-      '@tanstack/react-query',
-      'zod',
-    ],
+    optimizePackageImports: ['lucide-react', '@tanstack/react-query', 'zod'],
   },
 
   // 将 source map 限制到开发环境

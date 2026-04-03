@@ -4,7 +4,16 @@ import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { registerSchema, type RegisterFormValues } from '@/schemas';
-import { Button, Input, Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui';
+import {
+  Button,
+  Input,
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from '@/components/ui';
 
 export default function RegisterPage() {
   const {
@@ -38,7 +47,10 @@ export default function RegisterPage() {
         <form onSubmit={handleSubmit(onSubmit)}>
           <CardContent className="space-y-4">
             <div className="space-y-2">
-              <label htmlFor="username" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+              <label
+                htmlFor="username"
+                className="text-sm font-medium text-zinc-700 dark:text-zinc-300"
+              >
                 用户名
               </label>
               <Input
@@ -50,7 +62,10 @@ export default function RegisterPage() {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="email" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+              <label
+                htmlFor="email"
+                className="text-sm font-medium text-zinc-700 dark:text-zinc-300"
+              >
                 邮箱地址
               </label>
               <Input
@@ -63,7 +78,10 @@ export default function RegisterPage() {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="password" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+              <label
+                htmlFor="password"
+                className="text-sm font-medium text-zinc-700 dark:text-zinc-300"
+              >
                 密码
               </label>
               <Input
@@ -76,7 +94,10 @@ export default function RegisterPage() {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="confirmPassword" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+              <label
+                htmlFor="confirmPassword"
+                className="text-sm font-medium text-zinc-700 dark:text-zinc-300"
+              >
                 确认密码
               </label>
               <Input
@@ -95,7 +116,10 @@ export default function RegisterPage() {
             </Button>
             <p className="text-center text-sm text-zinc-500">
               已有账号？{' '}
-              <Link href="/login" className="font-medium text-zinc-900 hover:underline dark:text-zinc-50">
+              <Link
+                href="/login"
+                className="font-medium text-zinc-900 hover:underline dark:text-zinc-50"
+              >
                 立即登录
               </Link>
             </p>

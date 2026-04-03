@@ -61,7 +61,7 @@ export const useAuthStore = create<AuthState & AuthActions>()(
               isLoading: false,
             },
             false,
-            'login',
+            'login'
           );
         },
 
@@ -76,7 +76,7 @@ export const useAuthStore = create<AuthState & AuthActions>()(
               isAuthenticated: false,
             },
             false,
-            'logout',
+            'logout'
           );
         },
 
@@ -89,8 +89,8 @@ export const useAuthStore = create<AuthState & AuthActions>()(
           accessToken: state.accessToken,
           isAuthenticated: state.isAuthenticated,
         }),
-      },
+      }
     ),
-    { name: 'AuthStore' },
-  ),
+    { name: 'AuthStore' }
+  )
 );
